@@ -1,0 +1,1 @@
+execute if entity @s[scores={inputs.slot9_lock=0,inputs.slot9_trigger=0},nbt={SelectedItemSlot:8}] run return run scoreboard players set @s inputs.slot9_trigger 1

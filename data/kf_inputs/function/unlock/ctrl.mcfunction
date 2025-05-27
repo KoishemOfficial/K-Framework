@@ -1,0 +1,1 @@
+scoreboard players set @s inputs.ctrl_lock 0

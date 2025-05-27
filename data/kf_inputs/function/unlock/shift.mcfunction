@@ -1,0 +1,1 @@
+scoreboard players set @s inputs.shift_lock 0

@@ -1,0 +1,1 @@
+scoreboard players set @s inputs.slot9_lock 1

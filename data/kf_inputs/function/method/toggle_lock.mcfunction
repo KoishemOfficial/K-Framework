@@ -1,0 +1,2 @@
+$execute if score @s inputs.$(arg)_lock matches 1 run return run scoreboard players set @s inputs.$(arg)_lock 0
+$execute if score @s inputs.$(arg)_lock matches 0 run return run scoreboard players set @s inputs.$(arg)_lock 1

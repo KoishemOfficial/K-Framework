@@ -1,0 +1,1 @@
+execute if entity @s[predicate=inputs:s_input,scores={inputs.s_lock=0,inputs.s_trigger=0}] run return run scoreboard players set @s inputs.s_trigger 1
