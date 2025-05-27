@@ -2,7 +2,8 @@
 
 
 # Displaying the dialogue
-$title $(selector) actionbar [$(author),$(display)]
+$execute as $(selector) if entity @s[type=text_display] run data modify entity @s text set value [$(author),$(display)]
+$execute as $(selector) if entity @s[type=player] run title @s actionbar [$(author),$(display)]
 
 # Incrementation by step | char += step
 $scoreboard players operation .kf_dialogue.$(id).char kf_dialogues += .kf_dialogue.$(id).step kf_dialogues
