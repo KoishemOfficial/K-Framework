@@ -21,7 +21,7 @@
 ### Создание диалога
 
 ```json
-@single function
+&single function
 
 function kf_dialogue:create {node:,text:"",author:{text:""},step:1,selector:"@a",display:{color:gray},command:"",delay:1}
 ```
@@ -53,7 +53,7 @@ command     | Команда которая запускается при каж
 ### Удаление диалога
 
 ```json
-@single function
+&single function
 
 function kf_dialogue:delete {node:<node>}
 ```
@@ -61,7 +61,7 @@ function kf_dialogue:delete {node:<node>}
 ### Обнуление диалога
 
 ```json
-@single function
+&single function
 
 function kf_dialogue:reset with storage minecraft:kf_dialogue <node>
 ```
@@ -69,7 +69,7 @@ function kf_dialogue:reset with storage minecraft:kf_dialogue <node>
 ### Вывод диалога
 
 ```json
-@tick function
+&tick function
 
 function kf_dialogue:iterate with storage minecraft:kf_dialogue <node>
 ```
