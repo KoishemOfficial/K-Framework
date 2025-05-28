@@ -99,7 +99,7 @@ function kf_dialogue:iterate with storage minecraft:kf_dialogue <node>
 ```
 @single function
 
-function kf_quicksave:create {node:save1}
+function kf_quicksave:create {node:<node>}
 ```
 
 ### Заполнение ячеек
@@ -109,7 +109,7 @@ function kf_quicksave:create {node:save1}
 ```
 @single function
 
-function kf_quicksave:append {node:,score:"",obj:""}
+function kf_quicksave:append {node:<node>,score:"<score>",obj:"<objective>"}
 ```
 
 ```
@@ -131,7 +131,7 @@ obj         | Objective скорборда
 Выводит ID сохранения и все его ячейки в чат
 
 ```
-function kf_quicksave:print {node:}
+function kf_quicksave:print {node:<node>}
 ```
 
 ### Активация сохранений
@@ -139,7 +139,7 @@ function kf_quicksave:print {node:}
 Возвращает значения скорбордов из хранилища обратно сущностям/фэйк игрокам
 
 ```
-function kf_quicksave:activate {node:}
+function kf_quicksave:activate {node:<node>}
 ```
 
 ### Редактирование ячеек
@@ -147,7 +147,7 @@ function kf_quicksave:activate {node:}
 Изменяет ячейку через введённый ID ячейки. Счёт ячеек идёт от 0 до 9
 
 ```
-function kf_quicksave:set {node:,id:,score:"",obj:}
+function kf_quicksave:set {node:<node>,id:<id>,score:"<score>",obj:"<objective>"}
 ```
 
 ```
@@ -164,7 +164,7 @@ function kf_quicksave:set {
 Освобождает ячейку от данных через ID сохранения и ID ячейки
 
 ```
-function kf_quicksave:pop {node:save1,id:1}
+function kf_quicksave:pop {node:<node>,id:<id>}
 ```
 
 # Инпуты
