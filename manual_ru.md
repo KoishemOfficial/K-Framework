@@ -14,6 +14,7 @@
 
 - [Диалоги](#диалоги)
 - [Сохранения](#сохранения)
+- [Инпуты](#инпуты)
 
 # Диалоги
 
@@ -164,4 +165,149 @@ function kf_quicksave:set {
 
 ```
 function kf_quicksave:pop {node:save1,id:1}
+```
+
+# Инпуты
+
+Инпуты позволяют отслеживать нажатия определённых игроков [WASD, SPACE, CTRL, SHIFT, 0-9 слоты хотбара],
+при этом адаптируя удобную манипуляцию через замыкание определённых инпутов для более точной отслежки и удобства
+
+- [Методы](#методы)
+- [Замыкание](#замыкание)
+- [Отмыкание](#отмыкание)
+- [Триггеры](#триггеры)
+- [Одиночные триггеры](#одиночные-триггеры)
+
+### Методы
+
+```
+@single function
+execute as <@player> run function kf_inputs:method/toggle_lock {arg:<input>}
+    ↳ "Переключает" инпут определённому игроку с 0 на 1 и наоборот
+
+@single function
+execute as <@player> run function kf_inputs:method/check_chat
+    ↳ Выводит замкнутые инпуты определённого игрока в чат
+
+@single function
+execute as <@player> run function kf_inputs:method/check_actionbar
+    ↳ Выводит замкнутые инпуты определённого игрока над хотбаром
+
+@tick function
+execute as <@player> run function kf_inputs:method/check_trigger
+    ↳ Выводит нажатие клавиш определённого игрока над хотбаром
+```
+
+### Замыкание
+
+Замыкание выключает отслеживание определённых инпутов у определённых игроков для
+более гибкого управления
+
+```
+@single function
+
+execute as <@player> run function kf_inputs:lock/w
+execute as <@player> run function kf_inputs:lock/a
+execute as <@player> run function kf_inputs:lock/s
+execute as <@player> run function kf_inputs:lock/d
+execute as <@player> run function kf_inputs:lock/ctrl
+execute as <@player> run function kf_inputs:lock/shift
+execute as <@player> run function kf_inputs:lock/space
+
+execute as <@player> run function kf_inputs:lock/slot1
+execute as <@player> run function kf_inputs:lock/slot2
+execute as <@player> run function kf_inputs:lock/slot3
+execute as <@player> run function kf_inputs:lock/slot4
+execute as <@player> run function kf_inputs:lock/slot5
+execute as <@player> run function kf_inputs:lock/slot6
+execute as <@player> run function kf_inputs:lock/slot7
+execute as <@player> run function kf_inputs:lock/slot8
+execute as <@player> run function kf_inputs:lock/slot9
+
+function kf_inputs:lock/lock_all
+    ↳ Замыкает все инпуты
+```
+
+### Отмыкание
+
+Отмыкание включает замкнутые триггеры, после чего отслеживание снова начинает работать
+
+```
+@single function
+
+execute as <@player> run function kf_inputs:unlock/w
+execute as <@player> run function kf_inputs:unlock/a
+execute as <@player> run function kf_inputs:unlock/s
+execute as <@player> run function kf_inputs:unlock/d
+execute as <@player> run function kf_inputs:unlock/ctrl
+execute as <@player> run function kf_inputs:unlock/shift
+execute as <@player> run function kf_inputs:unlock/space
+
+execute as <@player> run function kf_inputs:unlock/slot1
+execute as <@player> run function kf_inputs:unlock/slot2
+execute as <@player> run function kf_inputs:unlock/slot3
+execute as <@player> run function kf_inputs:unlock/slot4
+execute as <@player> run function kf_inputs:unlock/slot5
+execute as <@player> run function kf_inputs:unlock/slot6
+execute as <@player> run function kf_inputs:unlock/slot7
+execute as <@player> run function kf_inputs:unlock/slot8
+execute as <@player> run function kf_inputs:unlock/slot9
+
+function kf_inputs:unlock/unlock_all
+    ↳ Отмыкает все инпуты
+```
+
+### Триггеры
+
+Отслеживает инпуты определённого игрока позволяя выводить команды через run
+
+```
+@tick function
+
+execute as <@player> if function kf_inputs:trigger/w
+execute as <@player> if function kf_inputs:trigger/a
+execute as <@player> if function kf_inputs:trigger/s
+execute as <@player> if function kf_inputs:trigger/d
+execute as <@player> if function kf_inputs:trigger/ctrl
+execute as <@player> if function kf_inputs:trigger/shift
+execute as <@player> if function kf_inputs:trigger/space
+
+execute as <@player> if function kf_inputs:trigger/slot1
+execute as <@player> if function kf_inputs:trigger/slot2
+execute as <@player> if function kf_inputs:trigger/slot3
+execute as <@player> if function kf_inputs:trigger/slot4
+execute as <@player> if function kf_inputs:trigger/slot5
+execute as <@player> if function kf_inputs:trigger/slot6
+execute as <@player> if function kf_inputs:trigger/slot7
+execute as <@player> if function kf_inputs:trigger/slot8
+execute as <@player> if function kf_inputs:trigger/slot9
+```
+
+### Одиночные триггеры
+
+Работает точно так же, но при нажатии/зажатии запускает команду только один раз. В одной функции
+может быть только один одиночный триггер.
+
+При наличии двух триггеров на один инпут активироваться будет только первый
+
+```
+@tick function
+
+execute as <@player> if function kf_inputs:trigger/single/w
+execute as <@player> if function kf_inputs:trigger/single/a
+execute as <@player> if function kf_inputs:trigger/single/s
+execute as <@player> if function kf_inputs:trigger/single/d
+execute as <@player> if function kf_inputs:trigger/single/ctrl
+execute as <@player> if function kf_inputs:trigger/single/shift
+execute as <@player> if function kf_inputs:trigger/single/space
+
+execute as <@player> if function kf_inputs:trigger/single/slot1
+execute as <@player> if function kf_inputs:trigger/single/slot2
+execute as <@player> if function kf_inputs:trigger/single/slot3
+execute as <@player> if function kf_inputs:trigger/single/slot4
+execute as <@player> if function kf_inputs:trigger/single/slot5
+execute as <@player> if function kf_inputs:trigger/single/slot6
+execute as <@player> if function kf_inputs:trigger/single/slot7
+execute as <@player> if function kf_inputs:trigger/single/slot8
+execute as <@player> if function kf_inputs:trigger/single/slot9
 ```
