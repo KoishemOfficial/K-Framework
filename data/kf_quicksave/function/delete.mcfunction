@@ -2,3 +2,4 @@
 
 
 $data remove storage kf_quicksaves $(node)
+data remove storage kf_quicksaves input
