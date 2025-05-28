@@ -48,4 +48,4 @@ execute unless score @s inputs.slot8_lock matches 1 run data modify storage inpu
 execute if score @s inputs.slot9_lock matches 1 run data modify storage inputs lock.slot9 set value "red"
 execute unless score @s inputs.slot9_lock matches 1 run data modify storage inputs lock.slot9 set value "green"
 
-execute as @s run function inputs:private/print_actionbar with storage inputs lock
+execute as @s run function kf_inputs:private/print_actionbar with storage inputs lock

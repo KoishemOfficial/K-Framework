@@ -1,1 +1,1 @@
-execute as @a run function inputs:private/reset
+execute as @a run function kf_inputs:private/reset
