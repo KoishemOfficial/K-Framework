@@ -1,10 +1,10 @@
-execute unless entity @s[predicate=inputs:w_input] run scoreboard players set @s inputs.w_trigger 0
-execute unless entity @s[predicate=inputs:a_input] run scoreboard players set @s inputs.a_trigger 0
-execute unless entity @s[predicate=inputs:s_input] run scoreboard players set @s inputs.s_trigger 0
-execute unless entity @s[predicate=inputs:d_input] run scoreboard players set @s inputs.d_trigger 0
-execute unless entity @s[predicate=inputs:sprint_input] run scoreboard players set @s inputs.ctrl_trigger 0
-execute unless entity @s[predicate=inputs:shift_input] run scoreboard players set @s inputs.shift_trigger 0
-execute unless entity @s[predicate=inputs:space_input] run scoreboard players set @s inputs.space_trigger 0
+execute unless entity @s[predicate=kf_inputs:w_input] run scoreboard players set @s inputs.w_trigger 0
+execute unless entity @s[predicate=kf_inputs:a_input] run scoreboard players set @s inputs.a_trigger 0
+execute unless entity @s[predicate=kf_inputs:s_input] run scoreboard players set @s inputs.s_trigger 0
+execute unless entity @s[predicate=kf_inputs:d_input] run scoreboard players set @s inputs.d_trigger 0
+execute unless entity @s[predicate=kf_inputs:sprint_input] run scoreboard players set @s inputs.ctrl_trigger 0
+execute unless entity @s[predicate=kf_inputs:shift_input] run scoreboard players set @s inputs.shift_trigger 0
+execute unless entity @s[predicate=kf_inputs:space_input] run scoreboard players set @s inputs.space_trigger 0
 
 execute unless entity @s[nbt={SelectedItemSlot:0}] run scoreboard players set @s inputs.slot1_trigger 0
 execute unless entity @s[nbt={SelectedItemSlot:1}] run scoreboard players set @s inputs.slot2_trigger 0
