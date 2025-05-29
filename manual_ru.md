@@ -1,5 +1,7 @@
 # K-Framework v. 1.0 от **Koishem**
 
+![K-Framework Logo](k_framework.png)
+
 **K-Framework** - набор инструментов для разработки карт внутри Minecraft.
 
 Этот датапак написан мной - **Koishem**, специально для TF Studios и моих личных целей
