@@ -3,7 +3,6 @@
 
 # Create score base
 scoreboard objectives add kf_dialogues dummy
-scoreboard players set #kf_dialogues_const1 kf_dialogues 1
 
 # Creating a dialogue storage
 $data merge storage kf_dialogue {$(node):{text:"$(text)",author:$(author),step:$(step),selector:"$(selector)",display:$(display),id:"$(node)",len:0,char:$(step),command:"$(command)",delay:$(delay)}}
