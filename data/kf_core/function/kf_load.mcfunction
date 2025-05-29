@@ -7,5 +7,5 @@ scoreboard objectives add KFrame.load minecraft.custom:minecraft.leave_game
 
 scoreboard players set #KFrame.const1 KFrame 1
 
-# Turning on all necessary namespaces
+# Turning on the main namespace
 function main:on_load

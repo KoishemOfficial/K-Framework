@@ -4,5 +4,5 @@
 # Running internals for the on_start base function
 execute as @a run function kf_core:kframe/private/on_start
 
-# Turning on all necessary namespaces
+# Turning on the main namespace
 function main:on_tick
