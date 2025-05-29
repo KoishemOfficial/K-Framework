@@ -16,6 +16,7 @@
 - [Диалоги](#диалоги)
 - [Сохранения](#сохранения)
 - [Инпуты](#инпуты)
+- [Таймеры](#таймеры)
 
 # Фрэймворк
 
@@ -345,4 +346,72 @@ execute as <@player> if function kf_inputs:trigger/single/slot6
 execute as <@player> if function kf_inputs:trigger/single/slot7
 execute as <@player> if function kf_inputs:trigger/single/slot8
 execute as <@player> if function kf_inputs:trigger/single/slot9
+```
+
+# Таймеры
+
+У K-Framework есть своя система таймеров основанная на ЧЧ:ММ:СС
+
+- [Создание таймера](#создание-таймера)
+- [Удаление таймера](#удаление-таймера)
+- [Активация таймера](#активация-таймера)
+- [Вывод таймера](#вывод-таймера)
+
+### Создание таймера
+
+```
+@single function
+
+function kf_timers:create {node:,h:0,m:0,s:0,end_h:0,end_m:0,end_s:0,single:0,command:""}
+```
+
+```
+function kf_timers:create {
+    node:t1,
+    h:0,
+    m:0,
+    s:57,
+    end_h:0,
+    end_m:1,
+    end_s:0,
+    single:1,
+    command:"say hi"
+}
+```
+
+```
+node        | ID таймера
+h           | Установка кол-ва часов таймера
+m           | Установка кол-ва минут таймера
+s           | Установка кол-ва секунд таймера
+end_h       | Установка конечного значения часов таймера
+end_m       | Установка конечного значения минут таймера
+end_s       | Установка конечного значения секунд таймера
+single      | 0 для циклического выполнения команды, 1 для одиночного
+command     | Команда которая запускается при окончании таймера
+    ↳ Если не хочется выводить команду - можно вписать "return fail"
+```
+
+### Удаление таймера
+
+```
+@single function
+
+function kf_timers:delete {node:<node>}
+```
+
+### Активация таймера
+
+```
+@tick function
+
+function kf_timers:iterate {node:<node>}
+```
+
+### Вывод таймера
+
+```
+@tick function
+
+function kf_timers:check {node:<node>}
 ```
