@@ -19,3 +19,4 @@ $execute if score .kf_timers.$(id).m kf_timers matches 60.. run function kf_time
 $execute store result storage kf_timers $(id).h int 1 run scoreboard players get .kf_timers.$(id).h kf_timers
 $execute store result storage kf_timers $(id).m int 1 run scoreboard players get .kf_timers.$(id).m kf_timers
 $execute store result storage kf_timers $(id).s int 1 run scoreboard players get .kf_timers.$(id).s kf_timers
+$execute store result storage kf_timers $(id).t int 1 run scoreboard players get .kf_timers.$(id).tick kf_timers

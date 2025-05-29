@@ -2,4 +2,4 @@
 
 
 # Displaying the time
-$title @a actionbar {text:"$(h):$(m):$(s)"}
+$title @a actionbar {text:"$(h):$(m):$(s):$(t)"}
