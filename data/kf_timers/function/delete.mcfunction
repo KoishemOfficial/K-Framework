@@ -3,6 +3,7 @@
 
 # Deleting data and scoreboard tied to the timer
 $data remove storage kf_timers $(node)
+$scoreboard players reset .kf_timers.$(node).single kf_timers
 $scoreboard players reset .kf_timers.$(node).tick kf_timers
 $scoreboard players reset .kf_timers.$(node).h kf_timers
 $scoreboard players reset .kf_timers.$(node).m kf_timers
