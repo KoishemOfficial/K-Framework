@@ -10,7 +10,6 @@ $data modify storage kf_timers $(id).end_m set from storage kf_timers $(id).init
 $data modify storage kf_timers $(id).end_h set from storage kf_timers $(id).init.[].end_h
 
 $scoreboard players set .kf_timers.$(id).tick kf_timers 0
-$execute store result score .kf_timers.$(id).single kf_timers run data get storage kf_timers $(id).single
 $execute store result score .kf_timers.$(id).h kf_timers run data get storage kf_timers $(id).h
 $execute store result score .kf_timers.$(id).m kf_timers run data get storage kf_timers $(id).m
 $execute store result score .kf_timers.$(id).s kf_timers run data get storage kf_timers $(id).s

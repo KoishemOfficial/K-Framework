@@ -357,6 +357,7 @@ execute as <@player> if function kf_inputs:trigger/single/slot9
 - [Создание таймера](#создание-таймера)
 - [Удаление таймера](#удаление-таймера)
 - [Активация таймера](#активация-таймера)
+- [Обнуление таймера](#обнуление-таймера)
 - [Вывод таймера](#вывод-таймера)
 
 ### Создание таймера
@@ -399,6 +400,8 @@ command     | Команда которая запускается при око
 ```
 @single function
 
+function kf_timers:delete with storage kf_timers <node>
+
 function kf_timers:delete {node:<node>}
 ```
 
@@ -407,7 +410,19 @@ function kf_timers:delete {node:<node>}
 ```
 @tick function
 
-function kf_timers:iterate {node:<node>}
+function kf_timers:iterate with storage kf_timers <node>
+
+function kf_timers:iterate {id:<node>}
+```
+
+### Обнуление таймера
+
+```
+@single function
+
+function kf_timers:reset with storage kf_timers <node>
+
+function kf_timers:reset {id:<node>}
 ```
 
 ### Вывод таймера
