@@ -5,10 +5,10 @@
 scoreboard objectives add kf_timers dummy
 
 # Creating a timers storage
-$data merge storage kf_timers {$(node):{id:$(node),t:0,h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s),single:$(single),command:"$(command)",init:[{h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s)}]}}
+$data merge storage kf_timers {$(node):{id:$(node),t:$(t),h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s),end_t:$(end_t),single:$(single),command:"$(command)",init:[{t:$(t),h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s)}]}}
 
 # Saving all the data in the scoreboards
-$scoreboard players set .kf_timers.$(node).tick kf_timers 0
+$execute store result score .kf_timers.$(node).tick kf_timers run data get storage kf_timers $(node).t
 $execute store result score .kf_timers.$(node).single kf_timers run data get storage kf_timers $(node).single
 $execute store result score .kf_timers.$(node).h kf_timers run data get storage kf_timers $(node).h
 $execute store result score .kf_timers.$(node).m kf_timers run data get storage kf_timers $(node).m
@@ -16,3 +16,4 @@ $execute store result score .kf_timers.$(node).s kf_timers run data get storage 
 $execute store result score .kf_timers.$(node).end_h kf_timers run data get storage kf_timers $(node).end_h
 $execute store result score .kf_timers.$(node).end_m kf_timers run data get storage kf_timers $(node).end_m
 $execute store result score .kf_timers.$(node).end_s kf_timers run data get storage kf_timers $(node).end_s
+$execute store result score .kf_timers.$(node).end_t kf_timers run data get storage kf_timers $(node).end_t

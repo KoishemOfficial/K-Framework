@@ -2,13 +2,13 @@
 
 
 # Non-reverse
-$execute if score .kf_timers.$(id).tick kf_timers matches 10.. run data modify storage kf_timers kf_timer_display.t set value "$(t)"
+$execute if score .kf_timers.$(id).t kf_timers matches 10.. run data modify storage kf_timers kf_timer_display.t set value "$(t)"
 $execute if score .kf_timers.$(id).s kf_timers matches 10.. run data modify storage kf_timers kf_timer_display.s set value "$(s)"
 $execute if score .kf_timers.$(id).m kf_timers matches 10.. run data modify storage kf_timers kf_timer_display.m set value "$(m)"
 $execute if score .kf_timers.$(id).h kf_timers matches 10.. run data modify storage kf_timers kf_timer_display.h set value "$(h)"
 
-$execute if score .kf_timers.$(id).tick kf_timers matches -1 run data modify storage kf_timers kf_timer_display.t set value "00"
-$execute if score .kf_timers.$(id).tick kf_timers matches 0..9 run data modify storage kf_timers kf_timer_display.t set value "0$(t)"
+$execute if score .kf_timers.$(id).t kf_timers matches -1 run data modify storage kf_timers kf_timer_display.t set value "00"
+$execute if score .kf_timers.$(id).t kf_timers matches 0..9 run data modify storage kf_timers kf_timer_display.t set value "0$(t)"
 $execute if score .kf_timers.$(id).s kf_timers matches ..9 run data modify storage kf_timers kf_timer_display.s set value "0$(s)"
 $execute if score .kf_timers.$(id).m kf_timers matches ..9 run data modify storage kf_timers kf_timer_display.m set value "0$(m)"
 $execute if score .kf_timers.$(id).h kf_timers matches ..9 run data modify storage kf_timers kf_timer_display.h set value "0$(h)"

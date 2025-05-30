@@ -2,6 +2,7 @@
 
 
 # Pull data from the init path to the original path
+$data modify storage kf_timers $(id).t set from storage kf_timers $(id).init.[].t
 $data modify storage kf_timers $(id).s set from storage kf_timers $(id).init.[].s
 $data modify storage kf_timers $(id).m set from storage kf_timers $(id).init.[].m
 $data modify storage kf_timers $(id).h set from storage kf_timers $(id).init.[].h
@@ -9,7 +10,7 @@ $data modify storage kf_timers $(id).end_s set from storage kf_timers $(id).init
 $data modify storage kf_timers $(id).end_m set from storage kf_timers $(id).init.[].end_m
 $data modify storage kf_timers $(id).end_h set from storage kf_timers $(id).init.[].end_h
 
-$scoreboard players set .kf_timers.$(id).tick kf_timers 0
+$execute store result score .kf_timers.$(id).t kf_timers run data get storage kf_timers $(id).t
 $execute store result score .kf_timers.$(id).h kf_timers run data get storage kf_timers $(id).h
 $execute store result score .kf_timers.$(id).m kf_timers run data get storage kf_timers $(id).m
 $execute store result score .kf_timers.$(id).s kf_timers run data get storage kf_timers $(id).s

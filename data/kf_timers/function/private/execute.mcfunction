@@ -2,4 +2,4 @@
 
 
 $execute run $(command)
-$execute if score .kf_timers.$(id).single kf_timers matches 1 run scoreboard players set .kf_timers.$(id).tick kf_timers -1
+$execute if score .kf_timers.$(id).single kf_timers matches 1 run scoreboard players set .kf_timers.$(id).t kf_timers -1
