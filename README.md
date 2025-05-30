@@ -352,10 +352,11 @@ execute as <@player> if function kf_inputs:trigger/single/slot9
 
 # Таймеры
 
-У **K-Framework** есть своя система таймеров основанная на ЧЧ:ММ:СС
+У **K-Framework** есть своя система таймеров основанная на ЧЧ:ММ:СС:ТТ | час:минута:секунда:тик
 
 - [Создание таймера](#создание-таймера)
 - [Удаление таймера](#удаление-таймера)
+- [Настройка таймера](#настройка-таймера)
 - [Активация таймера](#активация-таймера)
 - [Обнуление таймера](#обнуление-таймера)
 - [Вывод таймера](#вывод-таймера)
@@ -365,18 +366,20 @@ execute as <@player> if function kf_inputs:trigger/single/slot9
 ```
 @single function
 
-function kf_timers:create {node:,h:0,m:0,s:0,end_h:0,end_m:0,end_s:0,single:0,command:""}
+function kf_timers:create {node:,t:0,h:0,m:0,s:0,end_h:0,end_m:0,end_s:0,end_t:0,single:0,command:""}
 ```
 
 ```
 function kf_timers:create {
     node:t1,
+    t:0,
     h:0,
     m:0,
     s:57,
     end_h:0,
     end_m:1,
     end_s:0,
+    end_t:0,
     single:1,
     command:"say hi"
 }
@@ -384,12 +387,14 @@ function kf_timers:create {
 
 ```
 node        | ID таймера
+t           | Установка кол-ва тиков таймера
 h           | Установка кол-ва часов таймера
 m           | Установка кол-ва минут таймера
 s           | Установка кол-ва секунд таймера
 end_h       | Установка конечного значения часов таймера
 end_m       | Установка конечного значения минут таймера
 end_s       | Установка конечного значения секунд таймера
+end_t       | Установка конечного значения тиков таймера
 single      | 0 для циклического выполнения команды, 1 для одиночного
 command     | Команда которая запускается при окончании таймера
     ↳ Если не хочется выводить команду - можно вписать "return fail"
@@ -403,6 +408,30 @@ command     | Команда которая запускается при око
 function kf_timers:delete with storage kf_timers <node>
 
 function kf_timers:delete {node:<node>}
+```
+
+### Настройка таймера
+
+```
+@single function
+
+function kf_timers:set {id:,arg:,value:}
+```
+
+```
+function kf_timers:set {
+    id:t1,
+    arg:s,
+    value:5
+}
+```
+
+```
+id          | ID таймера
+arg         | Аргумент для изменения
+    ↳ Можно менять t, s, m, h, end_t, end_s, end_m, end_h, command
+value       | Значение для аргумента
+    ↳ При смене command ставьте лапки {id:,arg:command,value:"say hello world"}
 ```
 
 ### Активация таймера
