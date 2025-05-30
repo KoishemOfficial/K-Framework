@@ -5,7 +5,7 @@
 scoreboard objectives add kf_timers dummy
 
 # Creating a timers storage
-$data merge storage kf_timers {$(node):{id:$(node),t:0,h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s),single:$(single),command:"$(command)"}}
+$data merge storage kf_timers {$(node):{id:$(node),t:0,h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s),single:$(single),command:"$(command)",init:[{h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s)}]}}
 
 # Saving all the data in the scoreboards
 $scoreboard players set .kf_timers.$(node).tick kf_timers 0
