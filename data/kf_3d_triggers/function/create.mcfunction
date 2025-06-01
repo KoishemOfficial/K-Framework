@@ -41,5 +41,3 @@ $execute store result storage kf_3d_triggers $(node).scaleZ int 1 run scoreboard
 $scoreboard players reset .kf_3d_triggers.$(node).x
 $scoreboard players reset .kf_3d_triggers.$(node).y
 $scoreboard players reset .kf_3d_triggers.$(node).z
-
-$function kf_3d_triggers:private/summon_display with storage kf_3d_triggers $(node)
