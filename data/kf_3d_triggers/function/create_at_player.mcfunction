@@ -56,5 +56,3 @@ scoreboard players reset .kf_tempX kf_3d_triggers
 scoreboard players reset .kf_tempY kf_3d_triggers
 scoreboard players reset .kf_tempZ kf_3d_triggers
 
-$function kf_3d_triggers:private/summon_display with storage kf_3d_triggers $(node)
-

@@ -2,8 +2,8 @@
 
 
 # Kill all entities connected to the trigger
-$kill @e[tag=kf.$(id).trigger]
-$data remove storage kf_3d_triggers $(id)
+$kill @e[tag=kf.$(node).trigger]
+$data remove storage kf_3d_triggers $(node)
 
-$scoreboard players reset .kf_3d_triggers.$(id).single kf_3d_triggers
-$scoreboard players reset .kf_3d_triggers.$(id).triggered kf_3d_triggers
+$scoreboard players reset .kf_3d_triggers.$(node).single kf_3d_triggers
+$scoreboard players reset .kf_3d_triggers.$(node).triggered kf_3d_triggers
