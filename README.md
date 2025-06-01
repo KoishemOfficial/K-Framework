@@ -407,8 +407,6 @@ command     | Команда которая запускается при око
 ```
 @single function
 
-function kf_timers:delete with storage kf_timers <node>
-
 function kf_timers:delete {node:<node>}
 ```
 
@@ -566,7 +564,7 @@ function kf_3d_triggers:debug_off
 ```
 @single function
 
-function kf_3d_triggers:reset_trigger {node:<node>}
+function kf_3d_triggers:reset {node:<node>}
 ```
 
 ### Удаление триггера
@@ -574,5 +572,5 @@ function kf_3d_triggers:reset_trigger {node:<node>}
 ```
 @single function
 
-function kf_3d_triggers:delete with storage minecraft:kf_3d_triggers <node>
+function kf_3d_triggers:delete {node:<node>}
 ```
