@@ -2,6 +2,4 @@
 
 
 # Iterate through the text until it ends
-$execute if score .kf_dialogue.$(id).char kf_dialogues <= .kf_dialogue.$(id).len kf_dialogues if score .kf_dialogue.$(id).delay kf_dialogues matches $(delay) run function kf_dialogue:private/activate with storage kf_dialogue $(id)
-$execute if score .kf_dialogue.$(id).char kf_dialogues <= .kf_dialogue.$(id).len kf_dialogues if score .kf_dialogue.$(id).delay kf_dialogues matches $(delay).. run scoreboard players set .kf_dialogue.$(id).delay kf_dialogues 0
-$execute if score .kf_dialogue.$(id).char kf_dialogues <= .kf_dialogue.$(id).len kf_dialogues if score .kf_dialogue.$(id).delay kf_dialogues matches ..$(delay) run scoreboard players add .kf_dialogue.$(id).delay kf_dialogues 1
+$function kf_dialogue:private/iterate with storage kf_dialogue $(node)
