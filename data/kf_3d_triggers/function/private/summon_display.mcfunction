@@ -2,4 +2,4 @@
 
 
 # Summon an imitation of the dx dy dz field
-$summon block_display $(x) $(y) $(z) {Tags:["kf.$(id).trigger","kf.trigger"],CustomNameVisible:1b,CustomName:"Trigger [$(id)]",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[$(scaleX)f,$(scaleY)f,$(scaleZ)f]},block_state:{Name:"minecraft:red_stained_glass"},brightness:{sky:15,block:15}}
+$summon block_display $(x) $(y) $(z) {Tags:["kf.$(id).trigger","kf.trigger"],CustomNameVisible:1b,CustomName:"Trigger [$(id)]",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[$(scaleX)f,$(scaleY)f,$(scaleZ)f]},block_state:{Name:"minecraft:$(color)_stained_glass"},brightness:{sky:15,block:15}}

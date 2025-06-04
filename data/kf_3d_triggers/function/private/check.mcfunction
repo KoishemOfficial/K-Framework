@@ -6,14 +6,14 @@ $execute if score .kf_3d_triggers.debug kf_3d_triggers matches 1 positioned 0 0 
 $execute if score .kf_3d_triggers.debug kf_3d_triggers matches 1 positioned 0 0 0 positioned $(x) $(y) $(z) unless entity @a[dx=$(dx),dy=$(dy),dz=$(dz)] run title @a actionbar {"color":"red","text":"TRIGGERED!"}
 
 # Display triggers anchor
-$execute if score .kf_3d_triggers.debug kf_3d_triggers matches 1 positioned 0 0 0 positioned $(x) $(y) $(z) run particle bubble ~ ~ ~ 0.01 0.01 0.01 0 1 force @a
+$execute if score .kf_3d_triggers.debug kf_3d_triggers matches 1 positioned $(x) $(y) $(z) run particle bubble ~ ~ ~ 0.01 0.01 0.01 0 1 force @a
 
 # Display stained glass if debug is on
 $execute if score .kf_3d_triggers.debug kf_3d_triggers matches 1 unless entity @e[tag=kf.$(id).trigger] run function kf_3d_triggers:private/summon_display with storage kf_3d_triggers $(id)
 execute if score .kf_3d_triggers.debug kf_3d_triggers matches 0 run kill @e[tag=kf.trigger]
 
 # Display the name
-$data merge entity @n[type=block_display,tag=kf.$(id).trigger] {CustomNameVisible:1b,CustomName:"Trigger: [$(id)]",block_state:{Name:"minecraft:red_stained_glass"}}
+$data merge entity @n[type=block_display,tag=kf.$(id).trigger] {CustomNameVisible:1b,CustomName:"Trigger: [$(id)]",block_state:{Name:"minecraft:$(color)_stained_glass"}}
 
 # Check if entity is inside of the dx dy dz
 $execute if score .kf_3d_triggers.$(id).single kf_3d_triggers matches 0 positioned 0 0 0 positioned $(x) $(y) $(z) as $(selector) if entity @s[dx=$(dx),dy=$(dy),dz=$(dz)] run $(command)

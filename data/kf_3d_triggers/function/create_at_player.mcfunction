@@ -11,7 +11,7 @@ scoreboard players set .kf_3d_triggers.move kf_3d_triggers 0
 $scoreboard players set .kf_3d_triggers.$(node).triggered kf_3d_triggers 0
 
 # Creating the storage
-$data merge storage kf_3d_triggers {$(node):{id:$(node),x:0,y:0,z:0,dx:$(dx),dy:$(dy),dz:$(dz),scaleX:0,scaleY:0,scaleZ:0,command:"$(command)",single:$(single),selector:"$(selector)",color:"red"}}
+$data merge storage kf_3d_triggers {$(node):{id:$(node),x:0,y:0,z:0,dx:$(dx),dy:$(dy),dz:$(dz),scaleX:0,scaleY:0,scaleZ:0,command:"$(command)",single:$(single),selector:"$(selector)",color:"$(color)"}}
 
 # Pull players coordinates and store them in xyz of the node storage
 execute store result score .kf_tempX kf_3d_triggers run data get entity @s Pos[0] 100
