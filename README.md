@@ -30,10 +30,12 @@
 
 ```
 @single function
+
 function kf_core:kframe/method/entity_count {type:<type>}
     ⤷ Выводит количество сущностей указанного типа в мире
 
 @single function
+
 function kf_core:kframe/method/on_start_reset
     ⤷ Сбрасывает поведение функции on_start для повторной активации при следующем входе в мир
 ```
@@ -100,7 +102,7 @@ function kf_dialogue:create {
 ```
 node        | ID диалога
 text        | Текст, который будет выведен
-author      | SNBT-аргумент, вставляемый в начало диалога
+author      | SNBT-аргумент, вставляемый в начало диалога. (Можно вставить иконку персонажа через {text:"\uE000 "})
 display     | SNBT-аргумент для настройки оформления текста (цвет, жирность, курсив и т.д.)
 selector    | Селектор сущностей, которым будет показан диалог
     ⤷ При указании type=text_display..., вывод будет происходить через над сущностью
@@ -300,7 +302,7 @@ execute as <@player> run function kf_inputs:method/check_trigger
 ```
 @single function
 
-execute as <@player> run function kf_inputs:lock {input:<input>}
+execute as <@player> run function kf_inputs:lock {arg:<input>}
 ```
 
 ### Отмыкание
@@ -310,7 +312,7 @@ execute as <@player> run function kf_inputs:lock {input:<input>}
 ```
 @single function
 
-execute as <@player> run function kf_inputs:unlock {input:<input>}
+execute as <@player> run function kf_inputs:unlock {arg:<input>}
 ```
 
 ### Триггеры
@@ -327,7 +329,7 @@ execute as <@player> if function kf_inputs:trigger/<input>
 
 Отличаются от обычных: команда выполняется только один раз при нажатии, даже если клавиша удерживается.
 
-**Важно**: в одной функции можно использовать только один одиночный триггер, иначе сработает лишь первый
+**Важно**: в одной функции можно использовать только один одиночный триггер на один тип инпута, иначе сработает лишь первый
 
 ```
 @tick function
@@ -409,19 +411,19 @@ function kf_timers:delete {node:<node>}
 ```
 @single function
 
-function kf_timers:set {id:,arg:,value:}
+function kf_timers:set {node:,arg:,value:}
 ```
 
 ```
 function kf_timers:set {
-    id:t1,
+    node:t1,
     arg:s,
     value:5
 }
 ```
 
 ```
-id          | ID таймера
+node        | ID таймера
 arg         | Аргумент для изменения
     ⤷ Можно менять t, s, m, h, end_t, end_s, end_m, end_h, command
 value       | Значение для аргумента
@@ -435,7 +437,7 @@ value       | Значение для аргумента
 ```
 @tick function
 
-function kf_timers:iterate {id:<node>}
+function kf_timers:iterate {node:<node>}
 ```
 
 ### Обнуление таймера
@@ -445,7 +447,7 @@ function kf_timers:iterate {id:<node>}
 ```
 @single function
 
-function kf_timers:reset {id:<node>}
+function kf_timers:reset {node:<node>}
 ```
 
 ### Вывод таймера
@@ -455,7 +457,7 @@ function kf_timers:reset {id:<node>}
 ```
 @tick function
 
-function kf_timers:check {node:<node>}
+function kf_timers:check with storage kf_timers <node>
 ```
 
 ### 💡 Советы:

@@ -11,7 +11,7 @@ scoreboard players set .kf_3d_triggers.move kf_3d_triggers 0
 $scoreboard players set .kf_3d_triggers.$(node).triggered kf_3d_triggers 0
 
 # Creating the storage
-$data merge storage kf_3d_triggers {$(node):{id:$(node),x:$(x),y:$(y),z:$(z),dx:$(dx),dy:$(dy),dz:$(dz),scaleX:0,scaleY:0,scaleZ:0,command:"$(command)",single:$(single),selector:"$(selector)",color:"$(color)"}}
+$data merge storage kf_3d_triggers {$(node):{id:$(node),x:$(x)d,y:$(y)d,z:$(z)d,dx:$(dx),dy:$(dy),dz:$(dz),scaleX:0,scaleY:0,scaleZ:0,command:"$(command)",single:$(single),selector:"$(selector)",color:"$(color)"}}
 
 # Getting the "single" arg
 $execute store result score .kf_3d_triggers.$(node).single kf_3d_triggers run data get storage kf_3d_triggers $(node).single

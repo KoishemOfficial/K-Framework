@@ -2,18 +2,18 @@
 
 
 # Pull data from the init path to the original path
-$data modify storage kf_timers $(id).t set from storage kf_timers $(id).init.[].t
-$data modify storage kf_timers $(id).s set from storage kf_timers $(id).init.[].s
-$data modify storage kf_timers $(id).m set from storage kf_timers $(id).init.[].m
-$data modify storage kf_timers $(id).h set from storage kf_timers $(id).init.[].h
-$data modify storage kf_timers $(id).end_s set from storage kf_timers $(id).init.[].end_s
-$data modify storage kf_timers $(id).end_m set from storage kf_timers $(id).init.[].end_m
-$data modify storage kf_timers $(id).end_h set from storage kf_timers $(id).init.[].end_h
+$data modify storage kf_timers $(node).t set from storage kf_timers $(node).init.[].t
+$data modify storage kf_timers $(node).s set from storage kf_timers $(node).init.[].s
+$data modify storage kf_timers $(node).m set from storage kf_timers $(node).init.[].m
+$data modify storage kf_timers $(node).h set from storage kf_timers $(node).init.[].h
+$data modify storage kf_timers $(node).end_s set from storage kf_timers $(node).init.[].end_s
+$data modify storage kf_timers $(node).end_m set from storage kf_timers $(node).init.[].end_m
+$data modify storage kf_timers $(node).end_h set from storage kf_timers $(node).init.[].end_h
 
-$execute store result score .kf_timers.$(id).t kf_timers run data get storage kf_timers $(id).t
-$execute store result score .kf_timers.$(id).h kf_timers run data get storage kf_timers $(id).h
-$execute store result score .kf_timers.$(id).m kf_timers run data get storage kf_timers $(id).m
-$execute store result score .kf_timers.$(id).s kf_timers run data get storage kf_timers $(id).s
-$execute store result score .kf_timers.$(id).end_h kf_timers run data get storage kf_timers $(id).end_h
-$execute store result score .kf_timers.$(id).end_m kf_timers run data get storage kf_timers $(id).end_m
-$execute store result score .kf_timers.$(id).end_s kf_timers run data get storage kf_timers $(id).end_s
+$execute store result score .kf_timers.$(node).t kf_timers run data get storage kf_timers $(node).t
+$execute store result score .kf_timers.$(node).h kf_timers run data get storage kf_timers $(node).h
+$execute store result score .kf_timers.$(node).m kf_timers run data get storage kf_timers $(node).m
+$execute store result score .kf_timers.$(node).s kf_timers run data get storage kf_timers $(node).s
+$execute store result score .kf_timers.$(node).end_h kf_timers run data get storage kf_timers $(node).end_h
+$execute store result score .kf_timers.$(node).end_m kf_timers run data get storage kf_timers $(node).end_m
+$execute store result score .kf_timers.$(node).end_s kf_timers run data get storage kf_timers $(node).end_s
