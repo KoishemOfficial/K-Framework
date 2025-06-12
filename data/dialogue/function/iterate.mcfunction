@@ -2,4 +2,4 @@
 
 
 # Iterate through the text until it ends
-$function dialogue:private/iterate with storage dialogue $(node)
+$function dialogue:private/_iterate with storage dialogue $(node)

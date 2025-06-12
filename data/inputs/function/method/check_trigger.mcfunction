@@ -64,4 +64,4 @@ execute unless function inputs:trigger/slot9 run data modify storage inputs trig
 execute if score @s inputs.slot9_lock matches 1 unless function inputs:trigger/slot9 run data modify storage inputs trigger.slot9 set value "red"
 execute if function inputs:trigger/slot9 run data modify storage inputs trigger.slot9 set value "green"
 
-execute as @s run function inputs:private/print_actionbar with storage inputs trigger
+execute as @s run function inputs:private/_print_actionbar with storage inputs trigger

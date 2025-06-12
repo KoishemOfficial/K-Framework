@@ -2,7 +2,7 @@
 
 
 # Running internals for the on_start base function
-execute as @a run function core:kframe/private/on_start
+execute as @a run function core:kframe/private/_on_start
 
 # Turning on the main namespace
 function main:on_tick

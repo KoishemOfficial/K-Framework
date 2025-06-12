@@ -10,4 +10,4 @@ $scoreboard players set $(score) $(obj) $(value)
 scoreboard players add #quicksave_id quicksave 1
 execute store result storage quicksaves input.active_id int 1 run scoreboard players get #quicksave_id quicksave
 
-execute unless score #quicksave_id quicksave matches 11.. run function quicksave:private/iterator with storage quicksaves input
+execute unless score #quicksave_id quicksave matches 11.. run function quicksave:private/_iterator with storage quicksaves input

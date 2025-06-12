@@ -8,4 +8,4 @@ $data modify storage quicksaves input.node set value "$(node)"
 $data modify storage quicksaves input.score set value "$(score)"
 $data modify storage quicksaves input.obj set value "$(obj)"
 
-function quicksave:private/import with storage quicksaves input
+function quicksave:private/_import with storage quicksaves input

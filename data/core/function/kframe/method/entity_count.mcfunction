@@ -2,5 +2,5 @@
 
 
 # Store the entity count in the temporary score and print it
-$execute store result score #KF_TEMP KFrame if entity @e[type=minecraft:$(type)]
-$tellraw @a [{"color":"green","text":"$(type): "},{"color":"yellow","score":{"name":"#KF_TEMP","objective":"KFrame"}}]
+$execute store result score #temp KFrame if entity @e[type=minecraft:$(type)]
+$tellraw @a [{"color":"green","text":"$(type): "},{"color":"yellow","score":{"name":"#temp","objective":"KFrame"}}]

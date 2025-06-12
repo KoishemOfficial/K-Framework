@@ -8,4 +8,4 @@ $data modify storage quicksaves input.obj set from storage quicksaves $(node).da
 
 scoreboard players set #quicksave_id quicksave 1
 execute store result storage quicksaves input.active_id int 1 run scoreboard players get #quicksave_id quicksave
-function quicksave:private/iterator with storage quicksaves input
+function quicksave:private/_iterator with storage quicksaves input

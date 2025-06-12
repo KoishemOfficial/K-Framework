@@ -14,13 +14,13 @@ $scoreboard players set .3d_triggers.$(node).triggered 3d_triggers 0
 $data merge storage 3d_triggers {$(node):{id:$(node),x:0,y:0,z:0,dx:$(dx),dy:$(dy),dz:$(dz),scaleX:0,scaleY:0,scaleZ:0,command:"$(command)",single:$(single),selector:"$(selector)",color:"$(color)"}}
 
 # Pull players coordinates and store them in xyz of the node storage
-execute store result score .kf_tempX 3d_triggers run data get entity @s Pos[0] 100
-execute store result score .kf_tempY 3d_triggers run data get entity @s Pos[1] 100
-execute store result score .kf_tempZ 3d_triggers run data get entity @s Pos[2] 100
+execute store result score .tempX 3d_triggers run data get entity @s Pos[0] 100
+execute store result score .tempY 3d_triggers run data get entity @s Pos[1] 100
+execute store result score .tempZ 3d_triggers run data get entity @s Pos[2] 100
 
-$execute store result storage 3d_triggers $(node).x double 0.01 run scoreboard players get .kf_tempX 3d_triggers
-$execute store result storage 3d_triggers $(node).y double 0.01 run scoreboard players get .kf_tempY 3d_triggers
-$execute store result storage 3d_triggers $(node).z double 0.01 run scoreboard players get .kf_tempZ 3d_triggers
+$execute store result storage 3d_triggers $(node).x double 0.01 run scoreboard players get .tempX 3d_triggers
+$execute store result storage 3d_triggers $(node).y double 0.01 run scoreboard players get .tempY 3d_triggers
+$execute store result storage 3d_triggers $(node).z double 0.01 run scoreboard players get .tempZ 3d_triggers
 
 # Getting the "single" arg
 $execute store result score .3d_triggers.$(node).single 3d_triggers run data get storage 3d_triggers $(node).single
@@ -52,7 +52,7 @@ $scoreboard players reset .3d_triggers.$(node).x
 $scoreboard players reset .3d_triggers.$(node).y
 $scoreboard players reset .3d_triggers.$(node).z
 
-scoreboard players reset .kf_tempX 3d_triggers
-scoreboard players reset .kf_tempY 3d_triggers
-scoreboard players reset .kf_tempZ 3d_triggers
+scoreboard players reset .tempX 3d_triggers
+scoreboard players reset .tempY 3d_triggers
+scoreboard players reset .tempZ 3d_triggers
 

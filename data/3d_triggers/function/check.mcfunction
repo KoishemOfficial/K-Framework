@@ -2,4 +2,4 @@
 
 
 # Redirection
-$function 3d_triggers:private/check with storage 3d_triggers $(node)
+$function 3d_triggers:private/_check with storage 3d_triggers $(node)

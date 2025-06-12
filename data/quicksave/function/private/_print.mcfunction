@@ -12,4 +12,4 @@ execute store result storage quicksaves input.active_id int 1 run scoreboard pla
 scoreboard players add #quicksave_print_id quicksave 1
 execute store result storage quicksaves input.print_id int 1 run scoreboard players get #quicksave_print_id quicksave
 
-execute unless score #quicksave_id quicksave matches 11.. run function quicksave:private/print with storage quicksaves input
+execute unless score #quicksave_id quicksave matches 11.. run function quicksave:private/_print with storage quicksaves input
