@@ -1,1 +1,0 @@
-execute if entity @s[predicate=kf_inputs:d_input,scores={inputs.d_lock=0,inputs.d_trigger=0}] run return run scoreboard players set @s inputs.d_trigger 1
