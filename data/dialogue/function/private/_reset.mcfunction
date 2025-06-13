@@ -2,5 +2,6 @@
 
 
 $scoreboard players set .dialogue.$(id).char dialogues $(step)
+$execute store result score .dialogue.$(id).stay dialogues run data get storage dialogue $(id).stay
 $data modify storage minecraft:dialogue $(id).display.text set string storage minecraft:dialogue $(id).text 0 $(step)
 $execute as $(selector) if entity @s[type=text_display] run data modify entity @s text set value ""

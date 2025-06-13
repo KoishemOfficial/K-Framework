@@ -13,11 +13,9 @@ $execute store result storage dialogue $(id).char int 1 run scoreboard players g
 
 # Append display.text[0] += text[char]
 $data modify storage dialogue $(id).display.text set string storage dialogue $(id).text 0 $(char)
-$data modify storage dialogue $(id).display_text set string storage dialogue $(id).text 0 $(char)
 
 # If char >= len : display.text = text
 $execute if score .dialogue.$(id).char dialogues >= .dialogue.$(id).len dialogues run data modify storage dialogue $(id).display.text set string storage dialogue $(id).text 0 $(len)
-$execute if score .dialogue.$(id).char dialogues >= .dialogue.$(id).len dialogues run data modify storage dialogue $(id).display_text set string storage dialogue $(id).text 0 $(len)
 
 # Executing user input command
 $execute run $(command)

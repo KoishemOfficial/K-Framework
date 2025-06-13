@@ -5,11 +5,14 @@
 scoreboard objectives add dialogues dummy
 
 # Creating a dialogue storage
-$data merge storage dialogue {$(node):{text:"$(text)",author:$(author),step:$(step),selector:"$(selector)",display:$(display),id:"$(node)",len:0,char:$(step),command:"$(command)",delay:$(delay)}}
+$data merge storage dialogue {$(node):{text:"$(text)",author:$(author),step:$(step),selector:"$(selector)",display:$(display),id:"$(node)",len:0,char:$(step),command:"$(command)",delay:$(delay),stay:$(stay)}}
 
 # Getting the text's length and storing it
 $execute store result score .dialogue.$(node).len dialogues run data get storage dialogue $(node).text
 $execute store result storage dialogue $(node).len int 1 run scoreboard players get .dialogue.$(node).len dialogues
+
+# Getting the delayed timer
+$execute store result score .dialogue.$(node).stay dialogues run data get storage dialogue $(node).stay
 
 # Setting up the display.text with the first (or a couple of, depending on step) symbols
 $data modify storage minecraft:dialogue $(node).display.text set string storage minecraft:dialogue $(node).text 0 $(step)
