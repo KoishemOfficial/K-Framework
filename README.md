@@ -83,7 +83,7 @@ function inputs:tick
 ```
 @single function
 
-function dialogue:create {node:,text:"",author:{text:""},step:1,selector:"@a",display:{color:gray},command:"",delay:1}
+function dialogue:create {node:,text:"",author:{text:""},step:1,selector:"@a",display:{color:gray},command:"",delay:1,stay:-1}
 ```
 
 ```
@@ -95,7 +95,8 @@ function dialogue:create {
     selector:"@a",
     display:{color:blue,italic:true},
     command:"playsound minecraft:entity.experience_orb.pickup master @a ~ ~ ~ 999",
-    delay:3
+    delay:3,
+    stay: -1
 }
 ```
 
@@ -111,6 +112,8 @@ step        | Кол-во символов одновременно выводи
 delay       | 	Задержка между выводом символов (в тиках)
 command     | Команда, выполняемая при каждом выводе символа
     ⤷ Если не нужно выполнять команду — используйте return fail
+stay        | Задержка диалога после полного вывода. По окончанию stay таймера дисплеи очищаются
+    ⤷ Если не нужна задержка - используйте -1
 ```
 
 ### Удаление диалога
