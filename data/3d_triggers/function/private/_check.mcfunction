@@ -29,7 +29,7 @@ execute if score .3d_triggers.move 3d_triggers matches 1 store result score .tem
 execute if score .3d_triggers.move 3d_triggers matches 1 store result score .tempY 3d_triggers run data get entity @n[type=player] Pos[1] 100
 execute if score .3d_triggers.move 3d_triggers matches 1 store result score .tempZ 3d_triggers run data get entity @n[type=player] Pos[2] 100
 
-# Converting them back to double
+# Converting coordinates back to double
 $execute if score .3d_triggers.move 3d_triggers matches 1 store result storage 3d_triggers $(id).x double 0.01 run scoreboard players get .tempX 3d_triggers
 $execute if score .3d_triggers.move 3d_triggers matches 1 store result storage 3d_triggers $(id).y double 0.01 run scoreboard players get .tempY 3d_triggers
 $execute if score .3d_triggers.move 3d_triggers matches 1 store result storage 3d_triggers $(id).z double 0.01 run scoreboard players get .tempZ 3d_triggers
