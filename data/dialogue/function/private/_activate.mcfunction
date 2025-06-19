@@ -19,9 +19,7 @@ $execute if score .dialogue.$(id).char dialogues >= .dialogue.$(id).len dialogue
 
 $execute unless score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay) run function dialogue:private/_stop_run with storage dialogue $(id)
 
-$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay) run scoreboard players set .dialogue.$(id).run dialogues 1
-$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay).. run scoreboard players set .dialogue.$(id).delay dialogues 0
-$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches ..$(delay) run scoreboard players add .dialogue.$(id).delay dialogues 1
+$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues run scoreboard players set .dialogue.$(id).run dialogues 1
 
 # Executing user input command
 $execute run $(command)

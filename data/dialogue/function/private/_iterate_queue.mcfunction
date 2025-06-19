@@ -5,4 +5,4 @@
 $function dialogue:iterate {node:$(current)}
 
 # Incrementing the list to change the current node
-$execute if score .dialogue.$(id).queue_index dialogues.queue < .dialogue.$(id).queue_len dialogues.queue if score .dialogue.$(current).char dialogues >= .dialogue.$(current).len dialogues if score .dialogue.$(current).stay dialogues matches ..1 run function dialogue:private/_increment_queue_index with storage dialogue_queues $(id)
+$execute if score .dialogue.$(id).queue_index dialogues.queue < .dialogue.$(id).queue_len dialogues.queue if score .dialogue.$(current).run dialogues matches 0 if score .dialogue.$(current).stay dialogues matches ..1 run function dialogue:private/_increment_queue_index with storage dialogue_queues $(id)
