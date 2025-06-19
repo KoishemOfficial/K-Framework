@@ -8,3 +8,4 @@ $scoreboard players reset .dialogue.$(node).step
 $scoreboard players reset .dialogue.$(node).char
 $scoreboard players reset .dialogue.$(node).delay
 $scoreboard players reset .dialogue.$(node).stay
+$scoreboard players reset .dialogue.$(node).run
