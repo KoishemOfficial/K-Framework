@@ -20,6 +20,9 @@ $data modify storage minecraft:dialogue $(node).display.text set string storage 
 # Setting up delay timer
 $scoreboard players set .dialogue.$(node).delay dialogues 0
 
+# Setting up run score
+$scoreboard players set .dialogue.$(node).run dialogues 1
+
 # Setting up char counter
 $scoreboard players set .dialogue.$(node).char dialogues $(step)
 

@@ -2,9 +2,7 @@
 
 
 # Iterate through the text until it ends
-$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay) run function dialogue:private/_activate with storage dialogue $(id)
-$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay).. run scoreboard players set .dialogue.$(id).delay dialogues 0
-$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches ..$(delay) run scoreboard players add .dialogue.$(id).delay dialogues 1
+$execute if score .dialogue.$(id).run dialogues matches 1 run function dialogue:private/_activate with storage dialogue $(id)
 
 # Delaying dialogue disappearance
 $execute if score .dialogue.$(id).char dialogues >= .dialogue.$(id).len dialogues if score .dialogue.$(id).stay dialogues matches 1.. run function dialogue:private/_delayed_display with storage dialogue $(id)

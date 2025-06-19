@@ -17,5 +17,11 @@ $data modify storage dialogue $(id).display.text set string storage dialogue $(i
 # If char >= len : display.text = text
 $execute if score .dialogue.$(id).char dialogues >= .dialogue.$(id).len dialogues run data modify storage dialogue $(id).display.text set string storage dialogue $(id).text 0 $(len)
 
+$execute unless score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay) run function dialogue:private/_stop_run with storage dialogue $(id)
+
+$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay) run scoreboard players set .dialogue.$(id).run dialogues 1
+$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches $(delay).. run scoreboard players set .dialogue.$(id).delay dialogues 0
+$execute if score .dialogue.$(id).char dialogues <= .dialogue.$(id).len dialogues if score .dialogue.$(id).delay dialogues matches ..$(delay) run scoreboard players add .dialogue.$(id).delay dialogues 1
+
 # Executing user input command
 $execute run $(command)
