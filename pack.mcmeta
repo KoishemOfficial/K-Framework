@@ -1,0 +1,14 @@
+{
+    "pack": {
+        "pack_format": 71,
+        "description": "Koishem Framework"
+    },
+    "filter": {
+        "block": [
+            {
+                "namespace": "minecraft",
+                "path": "^advancement/.*"
+            }
+        ]
+    }
+}

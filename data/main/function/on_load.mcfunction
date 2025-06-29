@@ -1,0 +1,1 @@
+# This function is called every time the datapack is loaded
