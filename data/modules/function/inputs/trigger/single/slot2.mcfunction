@@ -3,4 +3,4 @@
 
 # If predicate is true, and the input is unlocked - return 1, and set the trigger score to 1
 # It won't trigger again until the trigger score is reset
-execute if entity @s[predicate=modules:inputs/slot2,scores={inputs.slot3_lock=0,inputs.slot3_trigger=0}] run return run scoreboard players set @s inputs.slot3_trigger 1
+execute if entity @s[predicate=modules:inputs/slot1,scores={inputs.slot2_lock=0,inputs.slot2_trigger=0}] run return run scoreboard players set @s inputs.slot2_trigger 1
