@@ -15,11 +15,8 @@ $execute store result storage dialogue $(id).char int 1 run scoreboard players g
 $data modify storage dialogue $(id).display.text set string storage dialogue $(id).text 0 $(char)
 
 # If char >= len : display.text = text
-$execute if score dialogue.$(id).char dialogues >= dialogue.$(id).len dialogues run data modify storage dialogue $(id).display.text set string storage dialogue $(id).text 0 $(len)
-
+$execute if score dialogue.$(id).char dialogues > dialogue.$(id).len dialogues run data modify storage dialogue $(id).display.text set string storage dialogue $(id).text 0 $(len)
 $execute unless score dialogue.$(id).char dialogues <= dialogue.$(id).len dialogues if score dialogue.$(id).delay dialogues matches $(delay) run function modules:dialogue/private/_stop_run with storage dialogue $(id)
-
-$execute if score dialogue.$(id).char dialogues <= dialogue.$(id).len dialogues run scoreboard players set dialogue.$(id).run dialogues 1
 
 # Executing user input command
 $execute unless score dialogue.$(id).char dialogues >= dialogue.$(id).len dialogues run $(command)

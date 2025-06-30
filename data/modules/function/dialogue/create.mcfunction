@@ -10,6 +10,7 @@ $data modify storage dialogue node_list.data append value $(node)
 
 # Getting the text's length and storing it
 $execute store result score dialogue.$(node).len dialogues run data get storage dialogue $(node).text
+$scoreboard players add dialogue.$(node).len dialogues 1
 $execute store result storage dialogue $(node).len int 1 run scoreboard players get dialogue.$(node).len dialogues
 
 # Getting the delayed timer
@@ -19,7 +20,7 @@ $execute store result score dialogue.$(node).stay dialogues run data get storage
 $data modify storage minecraft:dialogue $(node).display.text set string storage minecraft:dialogue $(node).text 0 $(step)
 
 # Setting up delay timer
-$scoreboard players set dialogue.$(node).delay dialogues 0
+$scoreboard players set dialogue.$(node).delay dialogues 1
 
 # Setting up run score
 $scoreboard players set dialogue.$(node).run dialogues 1
