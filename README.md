@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="kframe_icon.png" alt="K-Framework logo" width="150"/>
+    <img src="icon.png" alt="K-Framework logo" width="150"/>
 </p>
 <h1 align="center">K-Framework</h1>
 <h3 align="center">Датапак который упрощает разработку карт в Minecraft: Java Edition</h3>
