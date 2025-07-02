@@ -5,7 +5,7 @@
 scoreboard objectives add timers dummy
 
 # Creating a timers storage
-$data merge storage timers {$(node):{id:$(node),t:$(t),h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s),end_t:$(end_t),single:$(single),command:"$(command)",init:[{t:$(t),h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s)}]}}
+$data merge storage timers {$(node):{id:"$(node)",t:$(t),h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s),end_t:$(end_t),single:$(single),command:"$(command)",init:[{t:$(t),h:$(h),m:$(m),s:$(s),end_h:$(end_h),end_m:$(end_m),end_s:$(end_s)}]}}
 $data modify storage timers node_list.data append value $(node)
 
 # Saving all the data in the scoreboards

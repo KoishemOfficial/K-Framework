@@ -19,4 +19,4 @@ $execute if score dialogue.$(id).char dialogues > dialogue.$(id).len dialogues r
 $execute unless score dialogue.$(id).char dialogues <= dialogue.$(id).len dialogues if score dialogue.$(id).delay dialogues matches $(delay) run function modules:dialogue/private/_stop_run with storage dialogue $(id)
 
 # Executing user input command
-$execute unless score dialogue.$(id).char dialogues >= dialogue.$(id).len dialogues run $(command)
+$execute unless score dialogue.$(id).char dialogues > dialogue.$(id).len dialogues run $(command)
